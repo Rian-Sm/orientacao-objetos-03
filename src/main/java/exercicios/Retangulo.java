@@ -21,7 +21,7 @@ public class Retangulo {
     }
     public Retangulo(Double lado, Double altura){
         this.setLado(lado);
-        this.setAltura(altura)
+        this.setAltura(altura);
     }
     public static Retangulo criarRetangolo(Double lado, Double altura){
         return new Retangulo(lado, altura);
