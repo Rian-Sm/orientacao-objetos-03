@@ -27,12 +27,20 @@ public class RetanguloTeste {
         assertNotNull(r1.getLado());
     }
     @Test
-    public void metodoSetLado(){
+    public void metodoSetLadoAltura(){
         r1.setAltura(15.0);
         r1.setLado(20.0);
         assertEquals(20.0, r1.getLado());
         assertEquals(15.0, r1.getAltura());
     }
+    @Test
+    public void metodoSetLadoAlturaInvalido(){
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> r1.setLado(-20.0));
+        assertEquals("Número deve ser maior que zero.", exception.getMessage());
+        Exception exception2 = assertThrows(IllegalArgumentException.class, () -> r1.setAltura(-30.0));
+        assertEquals("Número deve ser maior que zero.", exception2.getMessage());
+    }
+
     @Test
     public void metodoCalcularArea(){
         assertEquals(150.0, r1.calcularArea());
