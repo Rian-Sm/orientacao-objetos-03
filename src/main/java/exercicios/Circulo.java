@@ -6,6 +6,9 @@ public class Circulo {
     public Circulo(Double raio){
         setRaio(raio);
     }
+    public static Circulo criarCirculo(Double raio){
+        return new Circulo(raio);
+    }
 
     public Double getRaio(){
         return raio;
