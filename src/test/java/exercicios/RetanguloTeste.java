@@ -22,6 +22,13 @@ public class RetanguloTeste {
         assertNotNull(r1);
     }
     @Test
+    public void criarObjRetanguloMetodoEstatico(){
+        Retangulo r2 = Retangulo.criarRetangolo(2.0, 4.5);
+        assertNotNull(r2);
+        assertEquals(2.0, r2.getLado() );
+        assertEquals(4.5, r2.getAltura());
+    }
+    @Test
     public void presencaAtributos(){
         assertNotNull(r1.getAltura());
         assertNotNull(r1.getLado());
