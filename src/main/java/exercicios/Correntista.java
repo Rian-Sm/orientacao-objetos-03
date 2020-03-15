@@ -10,10 +10,17 @@ public class Correntista {
         this.nome = nome;
         this.email = email;
         this.idade = idade;
-        this.salario = salario;
+
     }
     public static Correntista criarCorrentista(String nome, String email, Integer idade, Double salario){
         return new Correntista(nome, email, idade, salario);
+    }
+
+    public void setSalario(Double salario) {
+        if (salario<0){
+            throw new IllegalArgumentException("valor ivalido");
+        }
+        this.salario = salario;
     }
 
     public String getNome() {
@@ -32,4 +39,12 @@ public class Correntista {
         return salario;
     }
 
+    public String ObterDados(){
+        return nome + ", " + idade + " anos (" + email + ")";
+    }
+    public void promover(Double porcentagem){
+        if (porcentagem<0 || porcentagem>100)
+            throw new IllegalArgumentException("valor ivalido");
+        salario = salario + (salario*porcentagem/100);
+    }
 }
