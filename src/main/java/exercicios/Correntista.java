@@ -9,11 +9,18 @@ public class Correntista {
     public Correntista(String nome, String email, Integer idade,Double salario){
         this.nome = nome;
         this.email = email;
-        this.idade = idade;
-
+        setIdade(idade);
+        setSalario(salario);
     }
     public static Correntista criarCorrentista(String nome, String email, Integer idade, Double salario){
         return new Correntista(nome, email, idade, salario);
+    }
+
+    public void setIdade(Integer idade) {
+        if (idade<0){
+            throw new IllegalArgumentException("valor ivalido");
+        }
+        this.idade = idade;
     }
 
     public void setSalario(Double salario) {
@@ -39,7 +46,7 @@ public class Correntista {
         return salario;
     }
 
-    public String ObterDados(){
+    public String obterDados(){
         return nome + ", " + idade + " anos (" + email + ")";
     }
     public void promover(Double porcentagem){
